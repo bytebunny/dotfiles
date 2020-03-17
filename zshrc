@@ -8,11 +8,6 @@ fi
 # GNU "make" has been installed as "gmake". Use it as "make":
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
-# CUDA on Mac:
-export PATH=/Developer/NVIDIA/CUDA-10.2/bin${PATH:+:${PATH}}
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-10.2/lib\
-                         ${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
