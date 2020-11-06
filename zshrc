@@ -8,11 +8,29 @@ fi
 # GNU "make" has been installed as "gmake". Use it as "make":
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
+# Use Homebrew version of Python instead of the built-in one:
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Add path to TBB:
+export CPATH=/usr/local/Cellar/tbb/2020_U3_1/include:$CPATH
+export LD_LIBRARY_PATH=/usr/local/Cellar/tbb/2020_U3_1/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/Cellar/tbb/2020_U3_1/lib:$LIBRARY_PATH
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/skrypnyk/.oh-my-zsh"
+
+# Path to OpenMPI
+export MPI_DIR=/usr/local/openmpi
+export PATH=/usr/local/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/openmpi/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+
+# Path to Valgrind
+export PATH=/usr/local/valgrind/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/openmpi/lib:$LD_LIBRARY_PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
