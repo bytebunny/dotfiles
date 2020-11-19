@@ -5,32 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# GNU "make" has been installed as "gmake". Use it as "make":
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-
-# Use Homebrew version of Python instead of the built-in one:
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-# Add path to TBB:
-export CPATH=/usr/local/Cellar/tbb/2020_U3_1/include:$CPATH
-export LD_LIBRARY_PATH=/usr/local/Cellar/tbb/2020_U3_1/lib:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/usr/local/Cellar/tbb/2020_U3_1/lib:$LIBRARY_PATH
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/skrypnyk/.oh-my-zsh"
-
-# Path to OpenMPI
-export MPI_DIR=/usr/local/openmpi
-export PATH=/usr/local/openmpi/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/openmpi/lib:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
-
-# Path to Valgrind
-export PATH=/usr/local/valgrind/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/openmpi/lib:$LD_LIBRARY_PATH
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -102,17 +78,22 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Put any proprietary or private functions/values in ~/.private, and this will source them
+if [ -f $HOME/.private ]; then
+    source $HOME/.private
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='emacs'
+else
+  export EDITOR='emacs'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
