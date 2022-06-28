@@ -28,7 +28,7 @@ Installation
 ------------
 
 ``` bash
-git clone --recurse-submodules git://github.com/iamrosk/dotfiles ~/dotfiles
+git clone --recurse-submodules https://github.com/bytebunny/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
