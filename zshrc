@@ -113,3 +113,10 @@ alias emacs="emacs &"
 
 # Configure the prompt with Starship:
 # eval "$(starship init zsh)"
+
+# location for storing GNU Global's database
+export GTAGSLIBPATH=$HOME/.gtags/
+
+# this path was reported by setup.py in the jedi Emacs package dir.
+# jedi:install-server might fail if this dir is not in PATH.
+export PATH=$PATH:$HOME/.local/bin
