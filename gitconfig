@@ -14,9 +14,9 @@
 [merge]
     conflictstyle = diff3
 [user]
-	name = Rostyslav Skrypnyk
-# [includeIf "gitdir:/home/rostyslav/work/"]
-#     path = .work.gitconfig
-# [includeIf "gitdir:/home/rostyslav/personal/"]
-#     path = .personal.gitconfig
-    email = rostyslav.skrypnyk@elekta.com
+    name = Rostyslav Skrypnyk
+[includeIf "gitdir:~/work/"]
+    # configure email here
+    path = ~/work/.work.gitconfig
+[includeIf "gitdir:~/personal/"]
+    path = ~/personal/.personal.gitconfig
