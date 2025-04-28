@@ -72,7 +72,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" #"zeta"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z macos zsh-autosuggestions)
+plugins=(git z macos zsh-autosuggestions git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +106,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias emacs="emacs &"
+alias es="emacs &"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -119,4 +119,16 @@ export GTAGSLIBPATH=$HOME/.gtags/
 
 # this path was reported by setup.py in the jedi Emacs package dir.
 # jedi:install-server might fail if this dir is not in PATH.
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:/snap/bin
+
+# set xdg paths for emacs gui on wsl
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_CONFIG_DIRS=/etc/xdg
+
+# start browser from within wsl
+export DISPLAY=:0
+export BROWSER=/usr/bin/wslview
+
+# vcpkg
+export VCPKG_ROOT=$HOME/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
