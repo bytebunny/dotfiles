@@ -1,0 +1,22 @@
+[alias]
+    lol = log --oneline --decorate
+    graph = log --oneline --graph --decorate
+    reflog-detail = reflog --date=iso --pretty
+    word-diff = diff --word-diff
+    blame-deep = blame -C -C -C
+[core]
+    excludesFile = /home/rostyslav/.gitignore
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+[grep]
+    lineNumber = true
+    patternType = perl
+[merge]
+    conflictstyle = diff3
+[user]
+	name = Rostyslav Skrypnyk
+# [includeIf "gitdir:/home/rostyslav/work/"]
+#     path = .work.gitconfig
+# [includeIf "gitdir:/home/rostyslav/personal/"]
+#     path = .personal.gitconfig
+    email = rostyslav.skrypnyk@elekta.com
